@@ -57,9 +57,7 @@ public class InputStreamService extends Service {
          * Test #1: The client sends us two PFDs that we read and write from
          */
         @Override
-        public void sendInputStream(ParcelFileDescriptor input, ParcelFileDescriptor output) throws RemoteException {
-            Log.d(TAG, "test#1 inputStream(ParcelFileDescriptor pfd)");
-
+        public void sendInputStreams(ParcelFileDescriptor input, ParcelFileDescriptor output) throws RemoteException {
             // read the input
             InputStream is = new ParcelFileDescriptor.AutoCloseInputStream(input);
             OutputStream os = new ByteArrayOutputStream();

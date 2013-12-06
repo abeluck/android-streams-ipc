@@ -18,7 +18,7 @@ package com.commonsware.android.advservice;
 interface IInputStreamService {
     
     // test 1
-    void sendInputStream(in ParcelFileDescriptor input, in ParcelFileDescriptor output);
+    void sendInputStreams(in ParcelFileDescriptor input, in ParcelFileDescriptor output);
     
     //test 2
     ParcelFileDescriptor getOutputStream();

@@ -132,7 +132,7 @@ public class InputStreamClientFragment extends Fragment implements
                     });
 
             // blocks until result is ready
-            service.sendInputStream(input, output);
+            service.sendInputStreams(input, output);
             output.close(); // <-- this is required to halt the TransferThread
 
         } catch (RemoteException e) {
