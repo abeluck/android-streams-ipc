@@ -62,7 +62,7 @@ public class ParcelFileDescriptorUtil {
                 }
                 mOut.flush(); // just to be safe
             } catch (IOException e) {
-                Log.e("TransferThread", "writing failed");
+                Log.e("TransferThread"+getId(), "writing failed");
                 e.printStackTrace();
             } finally {
                 try {
@@ -76,8 +76,10 @@ public class ParcelFileDescriptorUtil {
                     e.printStackTrace();
                 }
             }
-            if (mListener != null)
+            if (mListener != null) {
+                Log.d("TransferThread"+getId(), "finished!");
                 mListener.onThreadFinished(this);
+            }
         }
     }
 }

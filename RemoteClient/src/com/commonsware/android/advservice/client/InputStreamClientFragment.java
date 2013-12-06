@@ -102,6 +102,7 @@ public class InputStreamClientFragment extends Fragment implements
     private void doTest1() {
         try {
             // send the input and output pfds
+
             InputStream is = new ByteArrayInputStream(
                     "Colorless green ideas sleep furiously".getBytes("UTF-8"));
             ParcelFileDescriptor input = ParcelFileDescriptorUtil.pipeFrom(is,
@@ -124,7 +125,6 @@ public class InputStreamClientFragment extends Fragment implements
                                 Log.d(TAG, "Test #1 read result: " + os.toByteArray().length
                                         + " str=" + os.toString("UTF-8"));
                             } catch (UnsupportedEncodingException e) {
-                                // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
 
@@ -133,6 +133,7 @@ public class InputStreamClientFragment extends Fragment implements
 
             // blocks until result is ready
             service.sendInputStream(input, output);
+            output.close(); // <-- this is required to halt the TransferThread
 
         } catch (RemoteException e) {
             e.printStackTrace();
