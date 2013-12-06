@@ -18,7 +18,7 @@ Eventually I'd like to develop a solution to pass files, byte[], and sockets
 across a unified interface.
 
 
-## Test 1: Passing ParcelFileDescriptor in AIDL method signature
+## Test 1: Passing ParcelFileDescriptor in AIDL method parameters
 
 TODO: writeup
 
@@ -46,7 +46,8 @@ cd android-streams-ipc
 ./deploy.sh
 ```
 
-Run InputServiceTestClient, push buttons, watch logcat
+Run InputServiceTestClient, push buttons, watch logcat.
+
 
 # Credits
 
