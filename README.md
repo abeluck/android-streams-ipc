@@ -36,6 +36,17 @@ Preliminary results: works!
 
 TODO: writeup
 
+### How to Run
+
+```
+git clone https://github.com/abeluck/android-streams-ipc
+cd android-streams-ipc
+./setup-ant.sh
+## make sure emulator or device is reachable
+./deploy.sh
+```
+
+Run InputServiceTestClient, push buttons, watch logcat
 
 # Credits
 
